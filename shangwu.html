@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title></title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link href="style/css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="style/js/jquery.min.js" ></script>
+<script>
+	$(function(){
+		$('.standard_select').click(function(){
+			$('.box_choose').slideDown(500);
+			
+		})
+		$('.radio label').click(function(){ 
+			$('.radio label').removeAttr('class') && $(this).attr('class', 'checked');
+			$('.radio input[type="radio"]').removeAttr('checked') && $(this).prev('input').attr('checked', 'checked');
+			var list= $(this).text();
+		 	$('.standard_select').text(list);
+		 	$('.box_choose').hide();
+		  });
+		
+	})
+	
+</script>
+<!--
+<script>
+	$(function(){
+		var windowsHeight = $(window).height();
+		var ma_center_height = $('.main_center').height();
+		$('.main_center').css('top',((windowsHeight-ma_center_height+66)/2)+'px');
+	})
+</script>
+-->
+</head>
+<body>
+
+<body style="background: url(img/bj2.jpg) no-repeat center top;">
+<div id="nav" class="c_f">
+	<div class="nav_box">
+		<ul class="menu" id="menu_wrap">
+			<li><a href="index.html" title="首页" class="r_none">首页</a> </li>
+			<li><a href="shangwu.html" title="商务合作" class="cs">商务合作</a> </li>
+			<li><a href="product.html" title="产品特色">产品特色</a> </li>			
+			<li><a href="lianxi.html" title="联系我们">联系我们</a></li>
+		</ul>
+		<a class="logo f_l c_f" href="index.html"><img src="img/logo.jpg"></a>
+	</div>
+</div>
+<div class="main">
+	<div class="main_center">
+		<div class="form_act">
+			<h1>代理商合作申请</h1>
+			<form action="">
+				<div class="inp_div">
+					<label>贵姓</label>
+					<input type="text" value="" class="outher_inp"/>
+					<div class="radio_choose">
+						<div class="standard_select">先生</div>
+						<div class="radio box_choose">
+							<ul>
+					        	<li><input type="radio" value="先生" disabled="disabled" checked="checked"/>
+					        		<label>先生</label></li>
+					        	<li><input type="radio" value="女士" disabled="disabled"/>
+					        		<label>女士</label></li>
+					        </ul>
+						</div>
+						
+					</div>
+										
+				</div>
+
+				<div class="inp_div">
+					<label>联系方式</label>
+					<input type="text" value="" />
+				</div>
+				<div class="inp_div">
+					<label>公司</label>
+					<input type="text" value="" />
+				</div>
+				<div class="inp_div"><label></label><input type="submit" value="提　交"  class="sub"/></div>
+				<div class="inp_div"><label></label><p>提交成功后，我们会在1-2个工作日内与您取得联系</p></div>
+				
+			</form>
+		</div>
+		<div class="hzlc">
+			<h2>合作流程</h2>
+			<div class="radius_box">代理商申请合作</div><span>&gt;</span>
+			<div class="radius_box">流量工厂联系沟通</div><span>&gt;</span>
+			<div class="radius_box normol">接入方式选择<br />API/代充</div><span>&gt;</span>
+			<div class="radius_box">开始合作</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

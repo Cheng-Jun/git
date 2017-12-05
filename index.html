@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<title></title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<script src="style/js/jquery.min.js"></script>
+<script src="style/js/jquery-ui.min.js"></script>
+<link href="style/css/style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="style/css/jquery.fullPage.css" />
+<script type="text/javascript" src="style/js/jquery.fullPage.js"></script>
+<script type="text/javascript" src="style/js/jquery.fullPage.min.js"></script>
+<!--[if IE]> <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+</head>
+<body>
+
+<script type="text/javascript">
+		$(document).ready(function() {	
+			var windowsHeight = $(window).height();
+			var se1 = $('#section1 .page-wrap').height();
+
+			$('#section1 .page-wrap').css('margin-top',((windowsHeight-se1)/2+33)+'px');
+			
+			
+			$('#fullpage').fullpage({
+				anchors: ['page1', 'page2', 'page3'],
+				navigation: true,
+				verticalCentered:true,
+				slidesNavigation: false,
+				css3:true,
+				slidesNavigation:false,
+				'afterLoad': function(anchorLink, index){
+
+					if(index == 2){
+						var se2 = $('#section2 .page-wrap').height();
+						if(se2<windowsHeight){
+							$('#section2 .page-wrap').css('margin-top',((windowsHeight-se2)/2+33)+'px');
+						}
+						 $('#section2 h2').addClass('fadeFromTopFast').css('display','block');
+						 $('#section2 li.li1').addClass('fadescale01').css('display','block');
+						 $('#section2 li.li2').addClass('fadescale02').css('display','block');
+						 $('#section2 li.li3').addClass('fadescale03').css('display','block');
+						 $('#section2 li.li4').addClass('fadescale04').css('display','block');
+					}
+					if(index == 3){
+						var se3 = $('#section3 .page-wrap').height();
+						$('#section3 .page-wrap').css('margin-top',((windowsHeight-se3)/2+33)+'px');
+					}
+				},
+				'onLeave': function(index, nextIndex, direction){
+						if(index == 2){
+							 $('#section2 h2').removeClass('fadeFromTopFast').css('display','none');
+							 $('#section2 li.li1').removeClass('fadescale01').css('display','none');
+							 $('#section2 li.li2').removeClass('fadescale02').css('display','none');
+							 $('#section2 li.li3').removeClass('fadescale03').css('display','none');
+							 $('#section2 li.li4').removeClass('fadescale04').css('display','none');
+						}
+				}
+
+			});
+		});
+	</script>
+<body>
+<div id="nav" class="c_f">
+	<div class="nav_box">
+		<ul class="menu" id="menu_wrap">
+			<li><a href="index.html" title="首页" class="cs r_none">首页</a> </li>
+			<li><a href="shangwu.html" title="商务合作">商务合作</a> </li>
+			<li><a href="product.html" title="产品特色">产品特色</a> </li>			
+			<li><a href="lianxi.html" title="联系我们" >联系我们</a></li>
+		</ul>
+		<a class="logo f_l c_f" href="index.html"><img src="img/logo.jpg"></a>
+	</div>
+</div>
+<div id="fullpage">
+	<div class="section" id="section1">
+		<div class="slide" id="slide1" data-anchor="slide1">
+			<div class="page-wrap">
+				<canvas id="bg-stars" class="bg-stars" width="1862" height="890" style="cursor: inherit;"> </canvas>
+				<div class="tiny-stars"><img src="img/start1.png" alt=""></div>
+				<div class="tiny-stars middle-stars"><img src="img/start.png" alt=""></div>
+				<div class="planet-big centered">
+					<span class="round round-1"></span> 
+					<span class="round round-2"></span> 
+					<span class="round round-3"></span> 
+					<span class="round round-4"></span> 
+					<span class="round round-5"></span>
+				</div>
+			</div>
+		</div>
+		<div class="slide" id="slide2" data-anchor="slide2" style=" display:none"> </div>
+	</div>
+	<div class="section" id="section2">
+		<div class="page-wrap">
+			
+			<div class="radius">
+				<h2>各种场景需求</h2>
+	            <ul>
+	                <li class="li1"><a class="icon1">社交平台，粉丝互动，<br />赠送流量奖品</a></li>
+	                <li class="li2"><a class="icon2">APP里流量购买，<br />需三网流量</a></li>
+	                <li class="li3"><a class="icon3">各种会员积分体系，<br />需赠送流</a></li>
+	                <li class="li4"><a class="icon4">公司、企业发用户<br />福利，员工奖励</a></li>
+	            </ul>
+	        </div>
+
+		</div>
+	</div>
+	<div class="section" id="section3">
+		<div class="page-wrap">
+			<div id="joinBox" class="joinBox">
+		        <img class="txtJoin dn" src="img/text.png" />
+		    </div>
+		    <div class="career"><img src="img/text1.png" /></div>
+
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+(function($){
+	$('#section3').Show();	
+})(jQuery);
+</script>
+<script type="text/javascript"> var isMobile = false; if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { isMobile = true; } </script>
+<script src="js/pixi.js"></script>
+<script src="js/bg-stars-pixi.js"></script>
+</body>
+</html>
